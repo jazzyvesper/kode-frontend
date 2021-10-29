@@ -6,6 +6,7 @@ import Main from '../Main/Main'
 import Preloader from '../Main/Preloader';
 import PageErrors from '../PageErrors/PageErrors';
 import SortModal from '../Modals/SortModal';
+import Profile from '../Profile/Profile';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         <Route exact path="/">
           <Preloader />
           <SortModal />
+        </Route> 
+        <Route path="/profile">
+          <Profile />
         </Route> 
         <Route path="*">
           <PageErrors />

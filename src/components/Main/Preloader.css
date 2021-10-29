@@ -6,3 +6,10 @@
         transform: translateX(10em) skewX(-45deg);
     }
     }
+
+
+.preloader {
+    max-width: 343px;
+    animation: preloader 5s;
+}
+

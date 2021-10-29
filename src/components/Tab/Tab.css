@@ -1,6 +1,7 @@
 .tab {
  max-width: 95%;
  margin: auto;
+ border-bottom: 1px solid #C3C3C6;
 }
 
 .tab__list {
@@ -28,4 +29,17 @@
 .tab__link_active {
   color: #050510;
   
+}
+
+
+@media screen and (max-width: 502px) {
+  .tab__list {
+    flex-direction: column;
+    align-items: center;
+  
+  }
+
+  .tab__link {
+    padding-right: 0;
+  }
 }

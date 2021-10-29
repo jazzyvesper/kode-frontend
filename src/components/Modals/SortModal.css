@@ -77,9 +77,7 @@
 }
 
 .form__input:checked + .visible-radio {
-  background-color: #6534FF;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-6 -6 12 12'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
-
+background-image: radial-gradient(#FFFFFF 0px 3px, #6534FF 3px 8px);
 
 }
 .form__input:disabled + .visible-radio:disabled {

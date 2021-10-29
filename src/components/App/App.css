@@ -14,6 +14,10 @@
 }
 
 .section__link {
+  transition: opacity 0.3s;
+}
+
+.section__link:hover {
   cursor: pointer;
-  
+  opacity: 0.3;
 }
