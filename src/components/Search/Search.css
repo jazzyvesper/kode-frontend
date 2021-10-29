@@ -6,32 +6,32 @@
 }
 
 .search__title {
-    margin: 0;
-    padding: 8px 0 18px 8px;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 28px;
+  margin: 0;
+  padding: 8px 0 18px 8px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
 }
 
 .search__form {
-    width: 100%
+  width: 100%
 }
 
 .search__form_type_people {
-    position: relative;
-    display: flex;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    width:100%
+  position: relative;
+  display: flex;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width:100%
 }
 
 .search__button {
-    margin: auto;
-    position:absolute;
-    top: 0;
-    left: 14px;
-    bottom: 0;
+  margin: auto;
+  position:absolute;
+  top: 0;
+  left: 14px;
+  bottom: 0;
 }
 
 .search__input {
@@ -43,12 +43,11 @@
 }
 
 .search__sort {
-    margin: auto;
-    position:absolute;
-    top: 0;
-    right: 14px;
-    bottom: 0;
-
+  margin: auto;
+  position:absolute;
+  top: 0;
+  right: 14px;
+  bottom: 0;
 }
 
 .search__input::placeholder {
@@ -57,4 +56,4 @@
   line-height: 20px;
   padding-left: 44px;
   color: #C3C3C6;
-  }
+}

@@ -1,0 +1,87 @@
+.modal {
+  position: fixed;
+  background-color: rgba(5, 5, 16, 0.16);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  transition: visibility .5s,opacity .5s;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal__open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__container {
+  width: 373px;
+  height: 192px;
+  background-color: #fff;
+  border-radius: 20px;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+}
+
+.modal__heading {
+  display: flex;
+  margin: 24px auto 35px;
+}
+
+.modal__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin: auto;
+}
+
+.modal__close {
+  position: absolute;
+  right: 23px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 28px;
+}
+
+.form__label {
+  display: flex;
+  grid-gap: 14px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 40px;
+}
+
+.form__input {
+  position: absolute;
+  width: 1px;height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.visible-radio {
+  display: inline-block; 
+  vertical-align: middle; 
+  width: 16px;
+  height: 16px;
+  border: 2px solid #6534FF; 
+  border-radius: 50%;
+}
+
+.form__input:checked + .visible-radio {
+  background-color: #6534FF;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-6 -6 12 12'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+
+
+}
+.form__input:disabled + .visible-radio:disabled {
+  background-color: #bdbdc0;
+}

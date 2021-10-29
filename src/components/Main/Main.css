@@ -1,0 +1,38 @@
+.cards {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards__item {
+ display: flex;
+
+}
+
+.card__img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #050510;
+}
+
+.card__subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #55555C;
+
+}

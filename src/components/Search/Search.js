@@ -1,7 +1,8 @@
 import React from 'react';
 import './Search.css';
 import search from '../../images/search.svg';
-import sort from '../../images/sort.svg'
+import sort from '../../images/sort.svg';
+
 function Search(props) {
   
   return (
