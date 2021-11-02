@@ -19,6 +19,13 @@
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
+  border: 0;
+  background-color: inherit;
+  list-style: none;
+}
+
+.active__link {
+  color: #f86401;
 }
 
 .tab__link:last-child {

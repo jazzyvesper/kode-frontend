@@ -1,19 +1,30 @@
 import React from 'react';
 import './Tab.css';
-import { NavLink } from 'react-router-dom';
-
+import {depart} from '../../utils/constants'
+import TabLink from './TabLink';
 
 function Tab(props) {
+const [text, setText] = React.useState('');
 
+function handleClick(e) {
+  
+  props.onSearch({
+    keyword: e.target.dataset.value
+  })
+  setText(e.target.dataset.value)
+}
+ 
   return (
     <div className="tab">
-      <ul  className="tab__list">
-        <NavLink to="/" className="tab__link section__link" activeClassName="tab__link_active">Все</NavLink>
-        <NavLink to="/" className="tab__link section__link" activeClassName="tab__link_active">Designers</NavLink>
-        <NavLink to="/" className="tab__link section__link" activeClassName="tab__link_active">Analysts</NavLink>
-        <NavLink to="/" className="tab__link section__link" activeClassName="tab__link_active">Managers</NavLink>
-        <NavLink to="/" className="tab__link section__link" activeClassName="tab__link_active">iOS</NavLink>
-        <NavLink to="/" className="tab__link section__link" activeClassName="tab__link_active">Android</NavLink>
+      <ul onClick={handleClick} className="tab__list">
+        {depart.map((item) => (
+          <TabLink 
+          link={item}
+          key={item.key}
+          activeClass={text}
+
+          />
+        ))}
       </ul>
      </div>
   ) 
