@@ -1,7 +1,40 @@
 .cards {
-    width: 95%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    margin-top: 22px;
-  }
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+}
+
+.user__border {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #C3C3C6;
+  text-align: center;
+  position: relative;
+  visibility: hidden;
+}
+
+.user__border_visible {
+  visibility: visible;
+}
+.user__border::before {
+  content: "";
+  border-bottom: 1px solid #C3C3C6;
+  width: 45%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.user__border::after {
+  content: "";
+  border-bottom: 1px solid #C3C3C6;
+  width: 45%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}

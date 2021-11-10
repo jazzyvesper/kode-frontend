@@ -9,7 +9,47 @@
 
 
 .preloader {
-    max-width: 343px;
-    animation: preloader 5s;
+  width: 95%;
+  margin: auto;
+  margin-top: 22px;
+  
+}
+.preloader__main {
+  display: flex;
+  margin-bottom: 24px;
+  
+}
+
+.preloader_logo {
+  width: 72px;
+ 
+}
+
+.preloader__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
+  
+}
+
+.preloader__item:first-child { 
+  width: 160px;
+  margin-bottom: 6px;
+  
+}
+
+.preloader__item:last-child {
+  width: 80px;
+}
+
+preloader__open {
+ 
+  display: flex;
+}
+
+.preloader__close {
+ 
+  display: none;
 }
 

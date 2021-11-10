@@ -7,7 +7,6 @@ function Tab(props) {
 const [text, setText] = React.useState('');
 
 function handleClick(e) {
-  
   props.onSearch({
     keyword: e.target.dataset.value
   })
@@ -16,9 +15,10 @@ function handleClick(e) {
  
   return (
     <div className="tab">
-      <ul onClick={handleClick} className="tab__list">
+      <ul className="tab__list">
         {depart.map((item) => (
           <TabLink 
+          onClick={handleClick}
           link={item}
           key={item.key}
           activeClass={text}

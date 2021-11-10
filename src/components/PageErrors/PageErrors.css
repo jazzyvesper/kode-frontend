@@ -7,6 +7,10 @@
   margin-top: 133px;
 }
 
+.error__page_open {
+  display: flex;
+}
+
 .error__img {
   width: 56px;
   height: 56px;
@@ -17,7 +21,7 @@
   font-size: 17px;
   line-height: 22px;
   color: inherit;
-  padding-bottom: 12px;
+  padding: 8px 0 12px;
   margin: 0;
 }
 

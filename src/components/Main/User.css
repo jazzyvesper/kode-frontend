@@ -12,9 +12,34 @@
   margin-right: 16px;
 }
 
+.card__birthday {
+  margin-left: auto;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  color: #55555C;
+  white-space: nowrap;
+}
+
 .card__text {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.card__nickname {
+  margin: 0;
+  align-self: center;
+  padding: 0 6px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #97979B;
+  text-transform: lowercase;
+}
+
+.card__names {
+  display: flex;
+  align-items: center;
 }
 
 .card__title {
@@ -31,5 +56,5 @@
   font-size: 13px;
   line-height: 16px;
   color: #55555C;
-
+  flex-basis: 100%;
 }

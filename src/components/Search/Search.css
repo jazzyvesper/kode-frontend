@@ -3,6 +3,12 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+  /*position: fixed;
+  top: 0;
+  left: 10px;
+  right: 10px;
+  opacity: 1;
+  background-color: #fff;*/
 }
 
 .search__title {
@@ -39,6 +45,7 @@
   background: #F7F7F8;
   border-radius: 16px;
   border: 0;
+  outline: none;
   height: 40px;
   padding: 0 45px;
 }
@@ -49,12 +56,33 @@
   top: 0;
   right: 14px;
   bottom: 0;
+  border: 0;
+  background-image: url('../../images/sort.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+}
+
+.search__sort_active {
+  background-image: url('../../images/sort-active.svg');
 }
 
 .search__input::placeholder {
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  padding-left: 44px;
+  padding-left: 10px;
   color: #C3C3C6;
+}
+
+
+
+@media screen and (max-width: 502px) {
+  .search__input::placeholder {
+    font-size: 12px;
+    line-height: 20px;
+    padding-left: 10px;
+  }
 }
