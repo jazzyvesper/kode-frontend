@@ -24,12 +24,12 @@
 .card__text {
   display: flex;
   flex-wrap: wrap;
+  margin-right: 22px;
 }
 
 .card__nickname {
-  margin: 0;
   align-self: center;
-  padding: 0 6px;
+  margin: 0 6px;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
@@ -57,4 +57,20 @@
   line-height: 16px;
   color: #55555C;
   flex-basis: 100%;
+}
+
+@media screen and (max-width: 502px) {
+  .card__names {
+    flex-direction: column;
+  }
+
+  .card__nickname {
+    margin: 0;
+    align-self: flex-start;
+  }
+  .card__title {
+    font-size: 14px;
+  }
+
+ 
 }

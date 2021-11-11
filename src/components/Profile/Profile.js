@@ -18,7 +18,6 @@ function Profile(props) {
   const phoneformat2 = user ? user.phone.split('-').join(' ') : '';
   const phoneformat = `+7 (${phoneformat2.slice(0,3)}) ${phoneformat2.slice(4,12)}`;
   const phonecall = `+7${phoneformat2.split(' ').join('')}`
-
   
   return (
   <>

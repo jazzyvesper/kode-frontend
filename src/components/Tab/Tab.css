@@ -8,8 +8,8 @@
   width: 100%;
   margin: auto;
   display: flex;
-  padding: 22px 0 8px 8px;
-
+  padding: 22px 8px 8px;
+  border-bottom: 1px solid #C3C3C6;
 }
 
 .tab__link {
@@ -22,10 +22,20 @@
   border: 0;
   background-color: inherit;
   list-style: none;
+  position: relative;
 }
 
-.active__link {
-  border-bottom: 2px solid #6534FF;
+.active__link::after {
+  content: "";
+    position: absolute;
+    background-color: #6534FF;
+    height: 2px;
+    display: block;
+    background-size: 20px;
+    top: 27px;
+    left: -10px;
+    right: -10px;
+    bottom: 0px;
 }
 
 .tab__link:last-child {

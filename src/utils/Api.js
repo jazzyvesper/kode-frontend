@@ -14,7 +14,32 @@ class DataProfile {
   getData () {
     return fetch(`${this._address}/users`, {
       method: 'GET',
-      headers: this._headers,
+      headers: {
+        'Content-Type': 'application/json',
+        'Prefer': 'code=200, example=success',
+    }
+    })
+    .then(this._getResponseData)
+  }
+
+  getDataDifferent () {
+    return fetch(`${this._address}/users`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Prefer': 'code=200, dynamic=true'
+    }
+    })
+    .then(this._getResponseData)
+  }
+
+  getDataReject () {
+    return fetch(`${this._address}/users`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Prefer': 'code=500, example=error-500'
+    }
     })
     .then(this._getResponseData)
   }
@@ -23,9 +48,6 @@ class DataProfile {
 
 const apiProfile = new DataProfile({
     address: 'https://stoplight.io/mocks/kode-education/trainee-test/25143926',
-    headers: {
-      'Content-Type': 'application/json'
-  }
   });
 
 export default apiProfile

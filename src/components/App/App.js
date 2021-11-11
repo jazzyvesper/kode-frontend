@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import PageErrors from '../PageErrors/PageErrors'
 import Search from '../Search/Search'
 import Main from '../Main/Main'
-import Preloader from '../Main/Preloader';
+import Skeleton from '../Main/Skeleton';
 import SortModal from '../Modals/SortModal';
 import Profile from '../Profile/Profile';
 import apiProfile from '../../utils/Api'
@@ -16,28 +16,33 @@ function App() {
   const [filtrMassiv, setFiltrMassiv] = React.useState([]);
   const [modalOpen, setModalOpen] = React.useState(false);
   const [sort, setSort] = React.useState(false);
-  const [openPreloader, setOpenPreloader] =  React.useState(false);
+  const [skeleton, setSkeleton] =  React.useState(false);
   const [activeButton, setActiveButton] = React.useState(false);
   const [brthNextYear, setBrthNextYear] = React.useState([]);
-  const getLocaldata = JSON.parse(localStorage.getItem('dataMassiv'));
   const [error, setError] = React.useState(false)
-  
+  //Получаем из Локалсторэдж отфильтрованный массив по департаментам
+  let departFiltr = JSON.parse(localStorage.getItem('departMassiv'));
+  //Получаем из Локалсторэдж массив для отображения профиля
+  //let getLocaldata = JSON.parse(localStorage.getItem('dataMassiv'));
+
   React.useEffect(() => {
-    setOpenPreloader(true)
+    setSkeleton(true)
     apiProfile.getData()
     .then((res) => {
-      setOpenPreloader(false)
+      console.log(res.items)
+      setSkeleton(false)
       setDataProfile(res.items)
       setFiltrMassiv(res.items)
-      localStorage.setItem("dataMassiv", JSON.stringify(res.items));
+      //localStorage.setItem("dataMassiv", JSON.stringify(res.items));
     })
     .catch(err => {
-      setOpenPreloader(false)
+      setSkeleton(false)
       setError(true)
       console.log(`Ошибка при загрузке профиля: ${err}`)}
     )
   }, [])
 
+  
   //Фильтр по департаменту
   function filtrTabArr(arr, keyword) {
     const NewArray = arr.filter((item) => {
@@ -47,14 +52,11 @@ function App() {
   }
 
   function handleTabClick({keyword}) {
-    if(keyword) {
       const newMassiv = filtrTabArr(dataProfile, keyword);
+      localStorage.setItem("departMassiv", JSON.stringify(newMassiv));
       setFiltrMassiv(newMassiv)
       setBrthNextYear([])
       setSort(false)
-    } else {
-      setFiltrMassiv(dataProfile)
-    }
   }
 
   //Фильтр по поисковому слову
@@ -69,7 +71,9 @@ function App() {
   }
 
   function handleFiltrClick({keyword}) {
-    const newMassiv = filtrSearchArr(dataProfile, keyword);
+    const newMassiv = filtrSearchArr(departFiltr, keyword);
+    setBrthNextYear([])
+    setSort(false)
     setFiltrMassiv(newMassiv)
   }
 
@@ -81,7 +85,9 @@ function App() {
       setBrthNextYear(sortDateArr(birthday[0])) 
       setSort(true)
     } else {
-      setFiltrMassiv(sortArr(filtrMassiv))
+      setBrthNextYear([])
+      setSort(false)
+      setFiltrMassiv(sortArr(departFiltr))
     }
     setModalOpen(false)
     setActiveButton(false)
@@ -99,7 +105,7 @@ function App() {
       return NewMassiv
   }
 
-  //функция сортировки по дню рождения
+  //Функция сортировки по дню рождения
   function sortDateArr(arr) {
     const NewMassiv = arr.sort(function(a, b) {
       a = datatime(a.birthday)
@@ -133,8 +139,8 @@ function App() {
           handleSortClick={handleOpenModal}
           activeButton={activeButton}
           />
-          {openPreloader && <Preloader isOpen={openPreloader} />}
-          {(!openPreloader && !error) && 
+          {skeleton && <Skeleton isOpen={skeleton} />}
+          {(!skeleton && !error) && 
           <Main 
           users={filtrMassiv}
           sort={sort}
@@ -152,7 +158,7 @@ function App() {
         </Route> 
         <Route path="/:id">
           <Profile 
-          user={getLocaldata}
+          user={dataProfile}
           />
         </Route> 
         <Route path="*">

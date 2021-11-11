@@ -1,6 +1,6 @@
 export const depart = [
     {key: 'all',
-     name: 'All',
+     name: 'Все',
      keyword: ''
     },
     {key: 'design',

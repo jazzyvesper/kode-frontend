@@ -10,6 +10,7 @@ function Search(props) {
   const [keyword, setKeyword] = React.useState('')
   const handleButtonClick = `search__sort section__link ${props.activeButton ? ('search__sort_active') : ''}`
 
+  //Слушатель на ввод поисковых слов
   function handleChangeInput(e) {
     setKeyword(e.target.value);
     props.onSearch({
@@ -17,6 +18,7 @@ function Search(props) {
     })
   }
 
+  //Слушатель клика на департаменты
   function handleClick(e) {
     props.onTab({
       keyword: e.target.dataset.value
@@ -24,6 +26,7 @@ function Search(props) {
     setText(e.target.dataset.value)
   }
 
+  //Слушатель клика по сортировке
   function handlerSubmit(e) {
     e.preventDefault();
     props.onSearch({
@@ -41,10 +44,12 @@ function Search(props) {
           <button onClick={props.handleSortClick} type="button" aria-label="сортировка" className={handleButtonClick}></button>
         </fieldset>
       </form>
-      <ul onClick={handleClick} className="tab__list">
+      <ul className="tab__list">
         {depart.map((item) => (
           <TabLink 
+          onTab={props.onTab}
           link={item}
+          onClick={handleClick}
           key={item.key}
           activeClass={text}
           />
