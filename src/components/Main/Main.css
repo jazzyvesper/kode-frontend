@@ -38,3 +38,14 @@
   top: 50%;
   right: 0;
 }
+
+
+@media screen and (max-width: 502px) {
+  .user__border::before {
+    width: 40%;
+  } 
+
+  .user__border::after {
+    width: 40%;
+  }
+}
